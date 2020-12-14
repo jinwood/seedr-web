@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { getStripe } from "../../util/stripe";
+import { loadStripe } from "@stripe/stripe-js";
+// import getStripe from "../../util/stripe";
 
 const buttonStyles = {
   fontSize: "13px",
@@ -17,6 +18,14 @@ const buttonDisabledStyles = {
   cursor: "not-allowed",
 };
 
+let stripePromise;
+const getStripe = () => {
+  if (!stripePromise) {
+    stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PKEY);
+  }
+  return stripePromise;
+};
+
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +36,7 @@ const Checkout = () => {
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "prod_IYyi6expeo9xcZ", quantity: 1 }],
+      lineItems: [{ price: "price_1HxqkoHCHwpMZAbf0StCZcMK", quantity: 1 }],
       successUrl: `http://localhost:8000/page-2/`,
       cancelUrl: `http://localhost:8000/`,
     });

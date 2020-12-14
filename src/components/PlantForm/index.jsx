@@ -13,10 +13,11 @@ const labelStyles = {
 };
 
 const PlantForm = () => {
+  console.log(process.env);
   return (
     <form style={formContainerStyles}>
       <span>
-        <label style={labelStyles} for="InputUsername">
+        <label style={labelStyles} htmlFor="InputUsername">
           Reddit username:
         </label>
         <input
@@ -26,13 +27,13 @@ const PlantForm = () => {
         />
       </span>
       <span>
-        <label style={labelStyles} for="InputURL">
+        <label style={labelStyles} htmlFor="InputURL">
           Reddit post url:
         </label>
         <input id="InputURL" type="text" placeholder="Reddit post URL" />
       </span>
       <span>
-        <label style={labelStyles} for="InputDonation">
+        <label style={labelStyles} htmlFor="InputDonation">
           Donation amount $:
         </label>
         <input
