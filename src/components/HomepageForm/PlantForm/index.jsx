@@ -21,7 +21,7 @@ const PlantForm = (props) => {
           Reddit username:
         </label>
         <input
-          id="reddit-username"
+          id="userName"
           type="text"
           placeholder="Reddit username (optional)"
           onChange={updateState}
@@ -32,7 +32,7 @@ const PlantForm = (props) => {
           Reddit post url:
         </label>
         <input
-          id="InputURL"
+          id="postUrl"
           type="text"
           placeholder="Reddit post URL"
           onChange={updateState}
