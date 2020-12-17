@@ -12,25 +12,31 @@ const labelStyles = {
   maxWidth: "220px",
 };
 
-const PlantForm = () => {
-  console.log(process.env);
+const PlantForm = (props) => {
+  const { updateState } = props;
   return (
     <form style={formContainerStyles}>
       <span>
-        <label style={labelStyles} htmlFor="InputUsername">
+        <label style={labelStyles} htmlFor="reddit-username">
           Reddit username:
         </label>
         <input
-          id="InputUsername"
+          id="reddit-username"
           type="text"
           placeholder="Reddit username (optional)"
+          onChange={updateState}
         />
       </span>
       <span>
         <label style={labelStyles} htmlFor="InputURL">
           Reddit post url:
         </label>
-        <input id="InputURL" type="text" placeholder="Reddit post URL" />
+        <input
+          id="InputURL"
+          type="text"
+          placeholder="Reddit post URL"
+          onChange={updateState}
+        />
       </span>
       <span>
         <label style={labelStyles} htmlFor="InputDonation">

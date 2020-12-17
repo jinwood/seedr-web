@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-// import getStripe from "../../util/stripe";
 
 const buttonStyles = {
   fontSize: "13px",
@@ -37,7 +36,7 @@ const Checkout = () => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price: "price_1HxqkoHCHwpMZAbf0StCZcMK", quantity: 1 }],
-      successUrl: `http://localhost:8000/page-2/`,
+      successUrl: `http://localhost:8000/plant-success`,
       cancelUrl: `http://localhost:8000/`,
     });
 
