@@ -42,11 +42,7 @@ const PlantForm = (props) => {
         <label style={labelStyles} htmlFor="InputDonation">
           Donation amount $:
         </label>
-        <input
-          id="InputDonation"
-          type="number"
-          placeholder="Donation amount $"
-        />
+        <input id="InputDonation" type="number" value="1.50" disabled={true} />
       </span>
     </form>
   );

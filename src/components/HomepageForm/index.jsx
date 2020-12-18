@@ -5,6 +5,7 @@ const HomepageForm = () => {
   const initialFormState = {
     userName: "",
     postUrl: "",
+    donationAmount: 1.5,
   };
   const [formState, setFormState] = useState(initialFormState);
 
