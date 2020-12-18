@@ -25,8 +25,10 @@ const getStripe = () => {
   return stripePromise;
 };
 
-const Checkout = () => {
+const StripeButton = (props) => {
   const [loading, setLoading] = useState(false);
+  const { disabled } = props;
+  console.log(disabled);
 
   const redirectToCheckout = async (event) => {
     event.preventDefault();
@@ -48,9 +50,9 @@ const Checkout = () => {
 
   return (
     <button
-      disabled={loading}
+      disabled={disabled}
       style={
-        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
+        disabled ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
       }
       onClick={redirectToCheckout}
     >
@@ -59,4 +61,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default StripeButton;
