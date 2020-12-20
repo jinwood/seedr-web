@@ -1,4 +1,5 @@
 import React from "react";
+import StripeButton from "../StripeButton";
 
 const formContainerStyles = {
   display: "flex",
@@ -13,9 +14,9 @@ const labelStyles = {
 };
 
 const PlantForm = (props) => {
-  const { updateState } = props;
+  const { updateState, isValid } = props;
   return (
-    <form style={formContainerStyles}>
+    <div style={formContainerStyles}>
       <span>
         <label style={labelStyles} htmlFor="reddit-username">
           Reddit username:
@@ -44,7 +45,10 @@ const PlantForm = (props) => {
         </label>
         <input id="InputDonation" type="number" value="1.50" disabled={true} />
       </span>
-    </form>
+      <span>
+        <StripeButton disabled={!isValid} />
+      </span>
+    </div>
   );
 };
 

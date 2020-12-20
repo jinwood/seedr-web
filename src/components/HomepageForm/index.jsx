@@ -34,8 +34,7 @@ const HomepageForm = () => {
 
   return (
     <>
-      <PlantForm updateState={updateState} />
-      <StripeButton disabled={!isValid} />
+      <PlantForm updateState={updateState} isValid={isValid} />
     </>
   );
 };
