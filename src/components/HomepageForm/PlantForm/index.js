@@ -16,28 +16,18 @@ const labelStyles = {
 const PlantForm = (props) => {
   const { updateState, isValid } = props;
   return (
-    <div style={formContainerStyles}>
+    <form>
       <span>
         <label style={labelStyles} htmlFor="reddit-username">
           Reddit username:
         </label>
-        <input
-          id="userName"
-          type="text"
-          placeholder="Reddit username (optional)"
-          onChange={updateState}
-        />
+        <input id="userName" type="text" onChange={updateState} />
       </span>
       <span>
         <label style={labelStyles} htmlFor="InputURL">
           Reddit post url:
         </label>
-        <input
-          id="postUrl"
-          type="text"
-          placeholder="Reddit post URL"
-          onChange={updateState}
-        />
+        <input id="postUrl" type="text" onChange={updateState} />
       </span>
       <span>
         <label style={labelStyles} htmlFor="InputDonation">
@@ -48,7 +38,7 @@ const PlantForm = (props) => {
       <span>
         <StripeButton disabled={!isValid} />
       </span>
-    </div>
+    </form>
   );
 };
 
