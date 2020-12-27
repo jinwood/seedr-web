@@ -1,22 +1,6 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
-const buttonStyles = {
-  fontSize: "13px",
-  textAlign: "center",
-  color: "#000",
-  padding: "12px 60px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "rgb(255, 178, 56)",
-  borderRadius: "6px",
-  letterSpacing: "1.5px",
-};
-
-const buttonDisabledStyles = {
-  opacity: "0.5",
-  cursor: "not-allowed",
-};
-
 let stripePromise;
 const getStripe = () => {
   if (!stripePromise) {
@@ -51,9 +35,7 @@ const StripeButton = (props) => {
   return (
     <button
       disabled={disabled}
-      style={
-        disabled ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-      }
+      className="btn btn-primary"
       onClick={redirectToCheckout}
     >
       Plant a Tree
