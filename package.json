@@ -16,11 +16,14 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@reach/router": "^1.3.4",
     "@stripe/stripe-js": "^1.11.0",
     "babel-plugin-styled-components": "^1.12.0",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.2.1",
     "gatsby": "^2.26.1",
     "gatsby-plugin-styled-components": "^3.6.0",
+    "query-string": "^6.13.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.1"

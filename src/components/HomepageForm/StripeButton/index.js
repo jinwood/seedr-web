@@ -24,7 +24,7 @@ const StripeButton = (props) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price: "price_1HxqkoHCHwpMZAbf0StCZcMK", quantity: 1 }],
-      successUrl: `http://localhost:8000/plant-success?postUrl=${postUrl}&donationAmount=${donationAmount}&userName=${userName}`,
+      successUrl: `http://localhost:8000/success?postUrl=${postUrl}&donationAmount=${donationAmount}&userName=${userName}`,
       cancelUrl: `http://localhost:8000/`,
     });
 
