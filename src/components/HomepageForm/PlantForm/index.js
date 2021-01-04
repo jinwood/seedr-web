@@ -39,9 +39,6 @@ const PlantForm = (props) => {
           disabled={true}
         />
       </div>
-      <span>
-        <StripeButton disabled={!isValid} />
-      </span>
     </form>
   );
 };

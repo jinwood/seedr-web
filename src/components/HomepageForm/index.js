@@ -35,6 +35,7 @@ const HomepageForm = () => {
   return (
     <>
       <PlantForm updateState={updateState} isValid={isValid} />
+      <StripeButton disabled={!isValid} formState={formState} />
     </>
   );
 };

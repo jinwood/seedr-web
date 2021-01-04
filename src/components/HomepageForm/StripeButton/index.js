@@ -10,6 +10,8 @@ const getStripe = () => {
 };
 
 const StripeButton = (props) => {
+  const { formState } = props;
+  const { postUrl, donationAmount, userName } = formState;
   const [loading, setLoading] = useState(false);
   const { disabled } = props;
   console.log(disabled);
@@ -22,7 +24,7 @@ const StripeButton = (props) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price: "price_1HxqkoHCHwpMZAbf0StCZcMK", quantity: 1 }],
-      successUrl: `http://localhost:8000/plant-success`,
+      successUrl: `http://localhost:8000/plant-success?postUrl=${postUrl}&donationAmount=${donationAmount}&userName=${userName}`,
       cancelUrl: `http://localhost:8000/`,
     });
 
