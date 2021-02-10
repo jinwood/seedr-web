@@ -1,22 +1,24 @@
-import { firebase } from "firebase";
+import firebase from "firebase";
 import { firebaseConfig } from "../config";
 
 export const saveSeed = (postUrl, userName, amount) => {
   console.log("in save seed");
-  try {
+  if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
-    const firestore = firebase.firestore();
+  }
+  const firestore = firebase.firestore();
 
-    const docRef = firestore.doc("seeds/seedData");
-    docRef.set({
+  console.log("run it");
+  return firestore
+    .collection("seeds")
+    .add({
       postUrl,
       userName,
       amount,
       planted: false,
+    })
+    .then((docRef) => console.log("apparently it worked ", docRef))
+    .catch((ex) => {
+      console.log(`something bad happened - ${ex}`);
     });
-  } catch (ex) {
-    console.error(`error saving to firestore - ${ex}`);
-    return false;
-  }
-  return true;
 };

@@ -10,9 +10,10 @@ const getStripe = () => {
 };
 
 const StripeButton = (props) => {
+  const [loading, setLoading] = useState(false);
+
   const { formState } = props;
   const { postUrl, donationAmount, userName } = formState;
-  const [loading, setLoading] = useState(false);
   const { disabled } = props;
   console.log(disabled);
 
