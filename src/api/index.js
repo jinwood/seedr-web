@@ -16,6 +16,7 @@ export const saveSeed = (postUrl, userName, amount) => {
       userName,
       amount,
       planted: false,
+      commented: false,
     })
     .then((docRef) => console.log("apparently it worked ", docRef))
     .catch((ex) => {
